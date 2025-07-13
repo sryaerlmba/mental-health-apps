@@ -11,7 +11,7 @@ export default function RegisterPage() {
   const [showPass2, setShowPass2] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 relative overflow-hidden">
+    <div className="min-h-screen py-10 flex items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 relative overflow-hidden">
       {/* Bubbles (ornament bg) */}
       <div className="absolute w-20 h-20 bg-purple-100 rounded-full top-10 left-10 opacity-30" />
       <div className="absolute w-16 h-16 bg-pink-100 rounded-full top-16 right-10 opacity-30" />
