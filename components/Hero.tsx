@@ -26,8 +26,8 @@ export default function Hero({
   const dotColors = ["bg-green-400", "bg-purple-400", "bg-blue-400"];
 
   return (
-    <div className="w-full bg-gray-100 overflow-x-hidden p-10 md:p-0">
-      <div className="mt-40 mb-25 mx-auto container xl:py-5 xl:px-20 md:grid md:grid-cols-2 items-center gap-5 flex flex-col ">
+    <div className="w-full bg-gray-100 overflow-x-hidden p-10 md:px-10 lg:p-0">
+      <div className="mt-40 mb-25 mx-auto container xl:py-5 xl:px-20 lg:grid lg:grid-cols-2 items-center gap-5 flex flex-col ">
         {/* Left */}
         <div>
           <h1 className="text-5xl font-semibold text-gray-800 leading-snug">
@@ -56,7 +56,7 @@ export default function Hero({
         </div>
 
         {/* Right */}
-        <div className="ml-auto">
+        <div className="flex items-end mt-5 w-full md:p-0">
           <ChatWrapperSection>
             {/* Header */}
             <ChatHeader />
