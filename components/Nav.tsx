@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Button from "./Button";
-import { FaUser } from "react-icons/fa";
 import { FaTimes, FaBars } from "react-icons/fa";
 
 export default function Nav() {
@@ -36,7 +35,7 @@ export default function Nav() {
             </ul>
           </div>
 
-          <div>
+          <div className="md:flex hidden">
             <ul>
               <li className="">
                 <Button className="bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
@@ -59,13 +58,25 @@ export default function Nav() {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 px-5 py-4">
           <ul className="flex flex-col gap-3">
-            <li className="hover:bg-purple-100 p-2 rounded-md">Features</li>
-            <li className="hover:bg-purple-100 p-2 rounded-md">Journaling</li>
-            <li className="hover:bg-purple-100 p-2 rounded-md">Articles</li>
+            <li className="cursor-pointer hover:text-purple-800 text-purple-600 bg-white py-2 px-3 rounded-md  transition-colors duration-300">
+              Beranda
+            </li>
+            <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
+              Journaling
+            </li>
+            <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
+              Mood
+            </li>
+            <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
+              Ai Chat
+            </li>
+            <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
+              Article
+            </li>
+
             <li>
-              <Button className="bg-purple-200 w-full text-gray-800 flex items-center justify-center shadow-xl">
-                <FaUser className="me-2" />
-                Login
+              <Button className="w-full  bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
+                <p>Login</p>
               </Button>
             </li>
           </ul>
