@@ -12,7 +12,7 @@ interface IFeature {
 }
 
 export default async function FeatureSection() {
-  const supabase = await createClient();
+  const supabase = createClient();
   const { data, error } = await supabase.from("features").select("*");
 
   if (error) {
