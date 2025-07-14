@@ -1,26 +1,11 @@
 import HeadFeatureSection from "./HeadFeatureSection";
-import { createClient } from "@/utils/supabase/client";
 import * as FaIcons from "react-icons/fa";
 import FeatureCard from "./FeatureCard";
-
-interface IFeature {
-  featureId: string;
-  featureTitleId: string;
-  featureIcon: string;
-  featureExcerptId: string;
-  navigation: string;
-}
+import { fetchFeatures } from "@/services/features";
+import { Ifeature } from "@/type/features";
 
 export default async function FeatureSection() {
-  const supabase = createClient();
-  const { data, error } = await supabase.from("features").select("*");
-
-  if (error) {
-    console.error(error);
-    return null;
-  }
-
-  console.log(data);
+  const data = await fetchFeatures();
 
   return (
     <section className="mt-20 h-100">
@@ -28,7 +13,7 @@ export default async function FeatureSection() {
         <HeadFeatureSection />
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 px-5 md:px-0">
-          {data.map((feature: IFeature) => {
+          {data.map((feature: Ifeature) => {
             const IconComponent =
               FaIcons[feature.featureIcon as keyof typeof FaIcons];
 
