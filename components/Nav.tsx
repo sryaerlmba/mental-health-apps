@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import { FaTimes, FaBars } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,9 +39,11 @@ export default function Nav() {
           <div className="md:flex hidden">
             <ul>
               <li className="">
-                <Button className="bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
-                  <p>Login</p>
-                </Button>
+                <Link href="/login">
+                  <Button className="bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
+                    <p>Login</p>
+                  </Button>
+                </Link>
               </li>
             </ul>
           </div>
