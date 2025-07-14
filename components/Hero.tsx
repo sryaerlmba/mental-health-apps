@@ -26,8 +26,8 @@ export default function Hero({
   const dotColors = ["bg-green-400", "bg-purple-400", "bg-blue-400"];
 
   return (
-    <section>
-      <div className="w-full bg-purple-50 overflow-x-hidden p-10 md:px-10 lg:p-0">
+    <section className="lg:h-dvh">
+      <div className="w-full  bg-purple-50 overflow-x-hidden p-10 md:px-10 lg:p-0">
         <div className="mt-40 mb-25 mx-auto container xl:py-5 xl:px-20 lg:grid lg:grid-cols-2 items-center gap-5 flex flex-col ">
           {/* Left */}
           <div>
