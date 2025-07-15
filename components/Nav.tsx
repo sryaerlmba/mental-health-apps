@@ -1,7 +1,7 @@
 "use client";
 import logo from "../public/img/logo.png";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { FaTimes, FaBars } from "react-icons/fa";
 import Link from "next/link";
@@ -9,10 +9,29 @@ import Image from "next/image";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <nav className="w-full bg-gradient-to-r from-blue-100 via-purple-100 to-green-100 fixed top-0 right-0 left-0 shadow-lg z-50">
-      <div className="mx-auto container">
+      <div className="mx-auto container" ref={navRef}>
         <div className="flex justify-between xl:py-5 xl:px-20 px-5 py-4 items-center">
           <div>
             <Image src={logo} alt="InnerCare Ai Logo" width={200} height={0} />
@@ -51,7 +70,7 @@ export default function Nav() {
           </div>
 
           {/* Hamburger (Mobile Only) */}
-          <div className="md:hidden text-gray-600 border border-gray-600 p-1 flex rounded-sm">
+          <div className="md:hidden text-pink-300 border border-pink-300 p-1 flex rounded-sm">
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
