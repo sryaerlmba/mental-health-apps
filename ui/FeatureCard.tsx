@@ -16,7 +16,7 @@ export default function FeatureCard({
   return (
     <div className="flex flex-col justify-between p-4 shadow-xl rounded-md h-full">
       <div>
-        <div className="bg-gray-200 p-2 rounded-md w-fit text-purple-300">
+        <div className={`bg-gray-200 p-2 rounded-md w-fit`}>
           {icon}
         </div>
         <h1 className="font-semibold mt-3 text-gray-800">{title}</h1>
