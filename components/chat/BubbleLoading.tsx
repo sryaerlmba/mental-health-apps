@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from "framer-motion";
 
-export function BubbleLoading() {
+export default function BubbleLoading() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
