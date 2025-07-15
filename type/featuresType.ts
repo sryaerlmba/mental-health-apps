@@ -3,5 +3,6 @@ export interface Ifeature {
     featureTitleId: string;
     featureIcon: string;
     featureExcerptId: string;
+    featureColor: string;
     navigation: string;
   }
