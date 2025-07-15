@@ -1,7 +1,9 @@
 // import { createClient } from "@/utils/supabase/server";
 import Hero from "@/components/Hero";
 import FeatureSection from "@/ui/FeatureSection";
+import ChatSection from "@/ui/ChatSection";
 
+import "@/styles/styles.css";
 
 export default async function Home() {
   return (
@@ -17,9 +19,9 @@ export default async function Home() {
           { value: "Gratis", label: "" },
         ]}
       />
-      
+
       <FeatureSection />
-      
+      <ChatSection />
     </div>
   );
 }

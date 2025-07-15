@@ -2,19 +2,12 @@
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import Button from "@/components/Button";
 import AiChatBubble from "./chat/AiChatBubble";
-import { BubbleLoading } from "./chat/BubbleLoading";
+import BubbleLoading from "./chat/BubbleLoading";
 import ChatHeader from "./chat/ChatHeader";
 import UserChatBubble from "./chat/UserChatBubble";
 import ChatWrapperSection from "./chat/ChatWrappperSection";
+import { Ihero } from "@/type/heroType";
 
-interface Ihero {
-  title: string;
-  highlight: string;
-  description: string;
-  stats: { value: string; label: string }[];
-  imagePlaceholder?: string;
-  buttonLabel?: string;
-}
 
 export default function Hero({
   title,
