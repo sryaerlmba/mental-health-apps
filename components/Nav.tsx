@@ -35,7 +35,7 @@ export default function Nav() {
         <div className="flex justify-between xl:py-5 xl:px-20 px-5 py-4 items-center">
           <div>
             <Link href="/">
-              <Image src={logo} alt="InnerCare Ai Logo" width={80} height={0} />
+              <Image src={logo} alt="InnerCare Ai Logo" width={100} height={0} />
             </Link>
           </div>
 
