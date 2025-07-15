@@ -1,48 +1,30 @@
-import HeadFeatureSection from "./HeadFeatureSection";
-import * as FaIcons from "react-icons/fa";
-import FeatureCard from "./FeatureCard";
-import { fetchFeatures } from "@/services/features";
-import { Ifeature } from "@/type/featuresType";
+// app/(home)/components/FeatureSection.tsx
+import SectionHeader from "./SectionHeader";
+import { Suspense } from "react";
+import FeatureCardSkeleton from "@/components/FeatureCardSkeleton";
+import FeatureList from "./FeatureList";
 
-export default async function FeatureSection() {
-  const data = await fetchFeatures();
+export default function FeatureSection() {
 
   return (
     <section className="mt-20">
       <div className="mx-auto container xl:py-20 xl:px-20">
-        <HeadFeatureSection />
+        <SectionHeader
+          title="Fitur Unggulan nama apps"
+          subtitle="Semua yang kamu butuhkan untuk menjaga kesehatan mental dalam satu platform"
+        />
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 px-5 md:px-0 text-pink">
-          {data.map((feature: Ifeature) => {
-            const IconComponent =
-              FaIcons[feature.featureIcon as keyof typeof FaIcons];
-
-            const iconColorMap: Record<string, string> = {
-              FaBook: "text-green-300",
-              FaPenNib: "text-pink-300",
-              FaHeart: "text-purple-300",
-              FaBrain: "text-sky-300",
-            };
-            const iconColor =
-              iconColorMap[feature.featureIcon] || "text-gray-400";
-
-            return (
-              <FeatureCard
-                key={feature.featureId}
-                icon={
-                  IconComponent ? (
-                    <IconComponent className={`text-3xl ${iconColor}`} />
-                  ) : (
-                    <FaIcons.FaRegQuestionCircle className="text-3xl text-red-400" />
-                  )
-                }
-                title={feature.featureTitleId}
-                excerpt={feature.featureExcerptId}
-                navigation={feature.navigation}
-              />
-            );
-          })}
-        </div>
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 px-5 md:px-0 mt-10">
+              {Array.from({ length: 4 }).map((_, idx) => (
+                <FeatureCardSkeleton key={idx} />
+              ))}
+            </div>
+          }
+        >
+          <FeatureList/>
+        </Suspense>
       </div>
     </section>
   );
