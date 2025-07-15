@@ -34,25 +34,27 @@ export default function Nav() {
       <div className="mx-auto container" ref={navRef}>
         <div className="flex justify-between xl:py-5 xl:px-20 px-5 py-4 items-center">
           <div>
-            <Image src={logo} alt="InnerCare Ai Logo" width={200} height={0} />
+            <Link href="/">
+              <Image src={logo} alt="InnerCare Ai Logo" width={80} height={0} />
+            </Link>
           </div>
 
           <div className="md:flex hidden">
             <ul className="flex gap-2 items-center">
               <li className="cursor-pointer hover:text-purple-800 text-purple-600 bg-white py-2 px-3 rounded-md  transition-colors duration-300">
-                Beranda
+                <Link href="/">Beranda</Link>
               </li>
               <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-                Journaling
+                <Link href="/jurnaling">Journaling</Link>
               </li>
               <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-                Mood
+                <Link href="/tracking-mood">Mood</Link>
               </li>
               <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-                Ai Chat
+                <Link href="/ai-chat">Ai Chat</Link>
               </li>
               <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-                Article
+                <Link href="/artikel">Article</Link>
               </li>
             </ul>
           </div>
@@ -83,24 +85,24 @@ export default function Nav() {
         <div className="md:hidden bg-white border-t border-gray-200 px-5 py-4">
           <ul className="flex flex-col gap-3">
             <li className="cursor-pointer hover:text-purple-800 text-purple-600 bg-white py-2 px-3 rounded-md  transition-colors duration-300">
-              Beranda
+              <Link href="/">Beranda</Link>
             </li>
             <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-              Journaling
+              <Link href="/jurnaling">Journaling</Link>
             </li>
             <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-              Mood
+              <Link href="/tracking-mood">Mood</Link>
             </li>
             <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-              Ai Chat
+              <Link href="/ai-chat">Ai Chat</Link>
             </li>
             <li className="cursor-pointer hover:text-purple-600 py-2 px-4 hover:rounded-md transition-colors duration-300 text-gray-800">
-              Article
+              <Link href="/artikel">Article</Link>
             </li>
 
             <li>
               <Link href="/login">
-                <Button className="w-full  bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
+                <Button className="w-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">
                   <p>Login</p>
                 </Button>
               </Link>
