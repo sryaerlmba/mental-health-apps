@@ -10,7 +10,7 @@ export default async function Home() {
     <div>
       <Hero
         title="Yuk rawat kesehatan mentalmu bareng"
-        highlight="InnerCare"
+        highlight="Care Yuk"
         description="AI curhat, journaling harian, dan pelacak mood, semua dalam satu aplikasi."
         buttonLabel="Mulai Perjalananmu"
         stats={[
