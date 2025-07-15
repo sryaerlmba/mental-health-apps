@@ -1,9 +1,11 @@
 "use client";
+import logo from "../public/img/logo.png";
 
 import { useState } from "react";
 import Button from "./Button";
 import { FaTimes, FaBars } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +15,7 @@ export default function Nav() {
       <div className="mx-auto container">
         <div className="flex justify-between xl:py-5 xl:px-20 px-5 py-4 items-center">
           <div>
-            <h1 className="font-semibold text-gray-800 ">LOGO APPS</h1>
+            <Image src={logo} alt="InnerCare Ai Logo" width={200} height={0} />
           </div>
 
           <div className="md:flex hidden">
