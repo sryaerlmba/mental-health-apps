@@ -70,7 +70,7 @@ export default function Nav() {
           </div>
 
           {/* Hamburger (Mobile Only) */}
-          <div className="md:hidden text-pink-300 border border-pink-300 p-1 flex rounded-sm">
+          <div className="md:hidden text-purple-300 border border-purple-300 p-1 flex rounded-sm">
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
