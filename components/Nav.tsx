@@ -31,11 +31,16 @@ export default function Nav() {
 
   return (
     <nav className="w-full bg-gradient-to-r from-blue-100 via-purple-100 to-green-100 fixed top-0 right-0 left-0 shadow-lg z-50">
-      <div className="mx-auto container" ref={navRef}>
+      <div className="mx-auto container">
         <div className="flex justify-between xl:py-5 xl:px-20 px-5 py-4 items-center">
           <div>
             <Link href="/">
-              <Image src={logo} alt="InnerCare Ai Logo" width={100} height={0} />
+              <Image
+                src={logo}
+                alt="InnerCare Ai Logo"
+                width={100}
+                height={0}
+              />
             </Link>
           </div>
 
@@ -82,7 +87,10 @@ export default function Nav() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-5 py-4">
+        <div
+          className="md:hidden bg-white border-t border-gray-200 px-5 py-4"
+          ref={navRef}
+        >
           <ul className="flex flex-col gap-3">
             <li className="cursor-pointer hover:text-purple-800 text-purple-600 bg-white py-2 px-3 rounded-md  transition-colors duration-300">
               <Link href="/">Beranda</Link>
