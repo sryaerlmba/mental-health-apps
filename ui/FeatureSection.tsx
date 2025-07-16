@@ -5,12 +5,11 @@ import FeatureCardSkeleton from "@/components/FeatureCardSkeleton";
 import FeatureList from "./FeatureList";
 
 export default function FeatureSection() {
-
   return (
     <section className="mt-20">
       <div className="mx-auto container xl:py-20 xl:px-20">
         <SectionHeader
-          title="Fitur Unggulan nama apps"
+          title="Fitur Unggulan Care Yuk"
           subtitle="Semua yang kamu butuhkan untuk menjaga kesehatan mental dalam satu platform"
         />
 
@@ -23,7 +22,7 @@ export default function FeatureSection() {
             </div>
           }
         >
-          <FeatureList/>
+          <FeatureList />
         </Suspense>
       </div>
     </section>
