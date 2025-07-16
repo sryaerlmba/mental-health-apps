@@ -3,7 +3,7 @@ import WhyUsCard from "./WhyUsCard";
 
 export default function WhyUsSection() {
   return (
-    <section className="mt-20md:py-20 bg-white md:px-5 bg-">
+    <section className="mt-20 md:py-20 bg-white md:px-5 p-10">
       <div className="mx-auto container xl:py-20 xl:px-20">
         <SectionHeader
           title="Kenapa Pilih Care Yuk?"

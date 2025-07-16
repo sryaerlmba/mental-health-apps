@@ -5,7 +5,7 @@ import growth from "@/public/img/growth.png";
 
 export default function WhyUsCard() {
   return (
-    <div className="grid grid-cols-3 mt-10 gap-5">
+    <div className="grid lg:grid-cols-3 mt-10 gap-5">
       <div className="bg-white p-5 rounded-xl shadow-md">
         <Image src={robot} alt="robot" width={100} />
         <h1 className="text-xl font-semibold text-gray-800 mt-3">
