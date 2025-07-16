@@ -8,7 +8,7 @@ export default function PhoneChatHeader() {
           <FaMessage className="text-purple-400 text-lg" />
         </div>
         <div>
-          <p className="text-white font-semibold text-xl">nama apps</p>
+          <p className="text-white font-semibold text-xl">Care Yuk Ai</p>
           <p className="text-sm font-light text-white/70">Online</p>
         </div>
       </div>

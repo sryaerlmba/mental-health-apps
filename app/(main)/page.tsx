@@ -20,10 +20,10 @@ export default async function Home() {
           { value: "Gratis", label: "" },
         ]}
       />
-
       <FeatureSection />
       <ChatSection />
       <WhyUsSection />
+
     </div>
   );
 }
