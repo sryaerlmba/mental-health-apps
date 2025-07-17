@@ -1,23 +1,20 @@
-import { FaHeart } from "react-icons/fa";
+import logo from "@/public/img/logo.png";
+import Image from "next/image";
 
 export default function AuthHeader({
-  title,
   subtitle,
   tagline,
 }: {
-  title: string;
   subtitle: string;
   tagline: string;
 }) {
   return (
     <>
-      <h1 className="text-center font-bold text-2xl text-purple-600 flex items-center justify-center gap-2">
-        <FaHeart className="text-purple-600" /> {title}
-      </h1>
-      <p className="text-center mt-1 text-gray-600">{subtitle}</p>
-      <p className="text-center text-sm text-gray-500">
-        {tagline}
-      </p>
+      <div className="flex flex-col justify-center items-center">
+        <Image src={logo} alt="logo care-yuk" width={200} />
+        <p className="text-center mt-1 text-gray-600">{subtitle}</p>
+        <p className="text-center text-sm text-gray-500">{tagline}</p>
+      </div>
     </>
   );
 }
