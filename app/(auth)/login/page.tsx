@@ -13,7 +13,6 @@ export default function Login() {
 
       <div className="flex flex-col md:w-lg">
         <AuthHeader
-          title="Nama Apps"
           subtitle="Selamat Datang Kembali! 💜"
           tagline="Lanjutkan perjalanan healing-mu bersama nama apps"
         />
