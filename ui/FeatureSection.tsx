@@ -6,7 +6,7 @@ import FeatureList from "./FeatureList";
 
 export default function FeatureSection() {
   return (
-    <section className="mt-20">
+    <section className="mt-20 md:mt-0">
       <div className="mx-auto container xl:py-20 xl:px-20">
         <SectionHeader
           title="Fitur Unggulan Care Yuk"
