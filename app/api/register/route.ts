@@ -2,11 +2,24 @@ import { NextResponse, NextRequest } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 import z from "zod";
 
-const registerSchema = z.object({
-  fullname: z.string().min(3, "Fullname must be at least 3 characters"),
-  email: z.email("Invalid email"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
-});
+const registerSchema = z
+  .object({
+    fullname: z.string().min(3, "Nama lengkap minimal 3 karakter"),
+    email: z
+      .string()
+      .refine((val) => val.trim().length > 0, {
+        message: "Email wajib diisi",
+      })
+      .refine((val) => /\S+@\S+\.\S+/.test(val), {
+        message: "Email tidak valid",
+      }),
+    password: z.string().min(8, "Password minimal 8 karakter"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password tidak sama",
+    path: ["confirmPassword"],
+  });
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -17,9 +30,10 @@ export async function POST(request: NextRequest) {
 
   // Check if validation failed
   if (!parsed.success) {
-    const errorMEssages = parsed.error.flatten().fieldErrors;
+    const errorMessage = z.flattenError(parsed.error).fieldErrors;
+
     return NextResponse.json(
-      { status: "error", message: "validation error", errors: errorMEssages },
+      { success: false, message: "Error validasi", errors: errorMessage },
       { status: 400 }
     );
   }
@@ -36,10 +50,10 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  // Check if email alrekady registered
+  // Check if email already registered
   if (data?.user?.identities?.length === 0) {
     return NextResponse.json(
-      { success: false, message: "Email already registered" },
+      { success: false, message: "Email sudah terdaftar" },
       { status: 409 }
     );
   }
@@ -66,7 +80,7 @@ export async function POST(request: NextRequest) {
     {
       success: true,
       message:
-        "User registered successfully. Please check your email to verify your account.",
+        "Registrasi berhasil. Silakan cek email Anda untuk verifikasi akun.",
       data: {
         id: data.user?.id,
         email: data.user?.email,
