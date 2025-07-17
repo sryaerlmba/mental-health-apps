@@ -17,8 +17,9 @@ const poppins = Poppins({
   ],
 });
 export const metadata: Metadata = {
-  title: "Aplikasi Mental",
-  description: "Mental",
+  title: "Care Yuk – Teman Bicaramu",
+  description:
+    "Care Yuk adalah aplikasi yang membantumu memahami, melacak, dan menjaga kesehatan mental.",
 };
 
 export default function RootLayout({
