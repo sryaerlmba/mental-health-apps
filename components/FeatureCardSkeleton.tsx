@@ -1,6 +1,6 @@
 export default function FeatureCardSkeleton() {
   return (
-    <div className="w-full max-w-xs bg-white rounded-xl shadow-md p-5 animate-pulse space-y-4">
+    <div className="w-full bg-white rounded-xl shadow-md p-5 animate-pulse space-y-4">
       {/* Icon Placeholder */}
       <div className="w-10 h-10 bg-gray-200 rounded-md" />
 

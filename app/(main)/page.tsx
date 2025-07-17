@@ -5,6 +5,7 @@ import ChatSection from "@/ui/ChatSection";
 
 import "@/styles/styles.css";
 import WhyUsSection from "@/ui/WhyUsSection";
+import StepsGuideSection from "@/ui/StepsGuideSection";
 
 export default async function Home() {
   return (
@@ -23,7 +24,7 @@ export default async function Home() {
       <FeatureSection />
       <ChatSection />
       <WhyUsSection />
-
+      <StepsGuideSection />
     </div>
   );
 }
