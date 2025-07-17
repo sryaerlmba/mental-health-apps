@@ -16,8 +16,7 @@ export default function RegisterPage() {
         {/* head */}
         <div className="">
           <AuthHeader
-            title="Nama Apps"
-            subtitle="Bergabung dengan Nama Apps! ✨"
+            subtitle="Bergabung dengan Care Yuk! ✨"
             tagline="Mulai perjalanan healing dan self-care bersamaku"
           />
         </div>
