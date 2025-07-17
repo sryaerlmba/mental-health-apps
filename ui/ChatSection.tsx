@@ -3,7 +3,7 @@ import { FaCircle } from "react-icons/fa6";
 
 export default function ChatSection() {
   return (
-    <section className=" bg-pink-50 md:py-20 md:px-5">
+    <section className=" bg-pink-50 md:py-20 md:px-5 mt-20">
       <div className="mx-auto container xl:py-20 xl:px-20">
         <div className="grid md:grid-cols-2 gap-5 items-center p-10 md:p-0">
           {/* kiri */}
