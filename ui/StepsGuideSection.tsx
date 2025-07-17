@@ -10,7 +10,7 @@ export default function StepsGuideSection() {
         />
 
         {/* steps */}
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 mt-10">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 mt-10 px-5 md:px-0">
           {/* 1 */}
           <div className="flex flex-col justify-center items-center">
             <p className="w-15 h-15 text-2xl rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center  justify-center text-white">
@@ -25,7 +25,7 @@ export default function StepsGuideSection() {
           </div>
 
           {/* 2 */}
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center mt-10">
             <p className="w-15 h-15 text-2xl rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center  justify-center text-white">
               2
             </p>
@@ -39,7 +39,7 @@ export default function StepsGuideSection() {
           </div>
 
           {/* 3 */}
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center mt-10">
             <p className="w-15 h-15 text-2xl rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center  justify-center text-white">
               3
             </p>
@@ -53,7 +53,7 @@ export default function StepsGuideSection() {
           </div>
 
           {/* 4 */}
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center mt-10">
             <p className="w-15 h-15 text-2xl rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center  justify-center text-white">
               4
             </p>
