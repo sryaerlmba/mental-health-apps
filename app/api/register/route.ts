@@ -7,12 +7,16 @@ const registerSchema = z
     fullname: z.string().min(3, "Nama lengkap minimal 3 karakter"),
     email: z
       .string()
-      .refine((val) => val.trim().length > 0, {
-        message: "Email wajib diisi",
-      })
-      .refine((val) => /\S+@\S+\.\S+/.test(val), {
-        message: "Email tidak valid",
-      }),
+      .min(1, "Email wajib diisi")
+      .refine(
+        (value) => {
+          if (value === "") return true;
+          return z.email().safeParse(value).success;
+        },
+        {
+          message: "Email tidak valid",
+        }
+      ),
     password: z.string().min(8, "Password minimal 8 karakter"),
     confirmPassword: z.string(),
   })
