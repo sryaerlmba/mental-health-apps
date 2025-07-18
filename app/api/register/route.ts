@@ -57,7 +57,11 @@ export async function POST(request: NextRequest) {
   // Check if email already registered
   if (data?.user?.identities?.length === 0) {
     return NextResponse.json(
-      { success: false, message: "Email sudah terdaftar" },
+      {
+        success: false,
+        message:
+          "Email sudah terdaftar silahkan. Silakan cek email Anda untuk verifikasi akun.",
+      },
       { status: 409 }
     );
   }
