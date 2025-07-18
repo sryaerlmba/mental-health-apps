@@ -62,7 +62,6 @@ export default function LoginForm() {
       setData(data);
       await alertSuccess(data.message);
       router.push("/");
-      console.log(data);
     } catch (err) {
       console.error("Error submitting form:", err);
     } finally {

@@ -1,7 +1,7 @@
 import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import Button from "@/components/Button";
 import { useState } from "react";
-import { alertSuccess } from "@/utils/swal";
+import { alertError, alertSuccess } from "@/utils/swal";
 import { useRouter } from "next/navigation";
 import { AlertError } from "@/components/Alert";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
@@ -52,6 +52,10 @@ export default function RegisterForm() {
 
       if (!res.ok) {
         setData(data);
+
+        if(res.status === 409) {
+          await alertError(data.message || "Gagal mendaftar.");
+        }
         return;
       }
 
