@@ -83,7 +83,9 @@ export default function LoginForm() {
               className="w-full py-4 outline-none text-sm pl-2"
               name="email"
               onChange={handleChange}
+              autoComplete="email"
             />
+
           </div>
         </div>
         {data?.error?.email && <AlertError msg={data?.error?.email} />}
@@ -98,6 +100,7 @@ export default function LoginForm() {
               className="w-full py-4 outline-none text-sm pl-2"
               onChange={handleChange}
               name="password"
+              autoComplete="current-password"
             />
             {showPass ? (
               <FaEyeSlash

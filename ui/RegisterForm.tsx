@@ -53,7 +53,7 @@ export default function RegisterForm() {
       if (!res.ok) {
         setData(data);
 
-        if(res.status === 409) {
+        if (res.status === 409) {
           await alertError(data.message || "Gagal mendaftar.");
         }
         return;
@@ -82,6 +82,7 @@ export default function RegisterForm() {
               className="w-full py-4 outline-none text-sm pl-2    "
               onChange={handleChange}
               name="fullname"
+              autoComplete="username"
             />
           </div>
         </div>
@@ -96,6 +97,7 @@ export default function RegisterForm() {
               className="w-full py-4 outline-none text-sm pl-2    "
               onChange={handleChange}
               name="email"
+              autoComplete="email"
             />
           </div>
         </div>
@@ -110,6 +112,7 @@ export default function RegisterForm() {
               className="w-full py-4 outline-none text-sm pl-2    "
               onChange={handleChange}
               name="password"
+              autoComplete="new-password"
             />
             {showPass ? (
               <FaEyeSlash
@@ -136,6 +139,7 @@ export default function RegisterForm() {
               className="w-full py-4 outline-none text-sm pl-2    "
               onChange={handleChange}
               name="confirmPassword"
+              autoComplete="new-password"
             />
             {showPass2 ? (
               <FaEyeSlash
