@@ -5,6 +5,7 @@ import { alertSuccess } from "@/utils/swal";
 import { useRouter } from "next/navigation";
 import { AlertError } from "@/components/Alert";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { useLoadingStore } from "@/stores/loadingStore";
 
 export default function RegisterForm() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function RegisterForm() {
     confirmPassword: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading, setIsLoading } = useLoadingStore();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
@@ -47,16 +48,15 @@ export default function RegisterForm() {
           body: JSON.stringify(form),
         }
       );
+      const data = await res.json();
 
       if (!res.ok) {
-        const errorData = await res.json();
-        setData(errorData);
+        setData(data);
         return;
       }
 
-      const result = await res.json();
-      setData(result);
-      await alertSuccess(result.message);
+      setData(data);
+      await alertSuccess(data.message);
       router.push("/login");
     } catch (err) {
       console.error("Error submitting form:", err);
