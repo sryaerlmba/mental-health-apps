@@ -1,5 +1,3 @@
-import { FaArrowRight } from "react-icons/fa";
-
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import Button from "@/components/Button";
 import { useState } from "react";
@@ -46,7 +44,7 @@ export default function LoginForm() {
         </div>
 
         <div className="mt-5">
-            <p className="text-purple-600 text-right">Lupa Password?</p>
+          <p className="text-purple-600 text-right">Lupa Password?</p>
         </div>
 
         <Button className="mt-5 w-full py-4 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 shadow-md hover:opacity-90 transition duration-300">
@@ -60,18 +58,6 @@ export default function LoginForm() {
               <span className="text-purple-600"> Daftar sekarang</span>
             </Link>
           </p>
-        </div>
-
-        {/* retun ke home */}
-        <hr className="border-gray-300 mt-5" />
-
-        <div className="mt-3">
-          <Link href="/">
-            <p className="text-center text-gray-600 hover:underline cursor-pointer transition-all duration-300 ease-in-out">
-              Kembali ke beranda{" "}
-              <FaArrowRight className="inline text-gray-600" />
-            </p>
-          </Link>
         </div>
       </form>
     </>

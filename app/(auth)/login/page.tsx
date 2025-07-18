@@ -14,7 +14,7 @@ export default function Login() {
       <div className="flex flex-col md:w-lg">
         <AuthHeader
           subtitle="Selamat Datang Kembali! 💜"
-          tagline="Lanjutkan perjalanan healing-mu bersama nama apps"
+          tagline="Lanjutkan perjalanan healing-mu bersama Care Yuk"
         />
         <div className="w-full bg-white rounded-2xl shadow-xl p-8 z-10 mt-10">
           {/* form */}
