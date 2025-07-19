@@ -3,7 +3,13 @@ import type { NextRequest } from "next/server";
 import { createClient } from "./utils/supabase/server";
 
 // Daftar route yang boleh diakses tanpa login
-const publicRoutes = ["/", "/login", "/register"];
+const publicRoutes = [
+  "/",
+  "/login",
+  "/register",
+  "/artikel",
+  "/artikel/[id]/[slug]",
+];
 
 export async function middleware(req: NextRequest) {
   const supabase = await createClient();
@@ -14,16 +20,17 @@ export async function middleware(req: NextRequest) {
   }
 
   const {
-    data: { session },
-    error: sessionError,
-  } = await supabase.auth.getSession();
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
 
-  if (sessionError) {
-    console.error("Error getting session:", sessionError);
+  console.log(user);
+  if (userError) {
+    console.error("Error getting user:", userError);
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  console.log(session);
+  console.log(user);
 
   return NextResponse.next();
 }
