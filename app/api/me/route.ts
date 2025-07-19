@@ -14,7 +14,7 @@ export async function GET() {
         error: error.message,
         data: null,
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 
