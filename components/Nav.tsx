@@ -7,6 +7,7 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { ProfileButton } from "./ProfileButton";
+import ProfileButtonMobile from "./ProfileButtonMobile";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -141,7 +142,7 @@ export default function Nav() {
 
             <li>
               {data?.data ? (
-                <p>udah login</p>
+                <ProfileButtonMobile fullname={data.data.fullname} />
               ) : (
                 <Link href="/login">
                   <Button className="w-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:opacity-90 transition duration-300">

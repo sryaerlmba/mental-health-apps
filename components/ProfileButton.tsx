@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { alertConfirm, alertSuccess } from "@/utils/swal";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { handleLogoutFlow } from "@/lib/handleLogout";
 
 export function ProfileButton({ fullname }: { fullname: string }) {
   const router = useRouter();
@@ -23,32 +23,7 @@ export function ProfileButton({ fullname }: { fullname: string }) {
   });
 
   const handleLogout = async () => {
-    const confirm = await alertConfirm("Kamu yakin ingin keluar?");
-    if (!confirm.isConfirmed) return;
-
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/logout`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.message);
-        return;
-      }
-
-      await alertSuccess(data.message);
-      router.push("/login");
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
+    await handleLogoutFlow(router.push);
   };
 
   return (
