@@ -16,10 +16,15 @@ export function alertSuccess(message: string) {
   });
 }
 
-// export function alertConfirm(message: string) {
-//   return Swal.fire({
-//     title: "Are you sure?",
-//     text: message,
-//     icon: "warning",
-//   })
-// }
+export function alertConfirm(message: string) {
+  return Swal.fire({
+    title: "Apakah kamu yakin?",
+    text: message,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Ya, lanjutkan",
+    cancelButtonText: "Batal",
+  });
+}
